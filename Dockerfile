@@ -18,9 +18,9 @@ WORKDIR /opt/app
 # RUN npm install --save-dev cypress
 
 # Install your web application's dependencies
-COPY package.json .
-COPY yarn.lock .
-COPY .yarnrc.yml .
+# COPY package.json .
+# COPY yarn.lock .
+# COPY .yarnrc.yml .
 
 # #Install dependencies using Yarn
 RUN echo "//registry.npmjs.org/:_authToken=\${{ secrets.EP_NPM_TOKEN }}" > .npmrc
