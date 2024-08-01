@@ -22,9 +22,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Build the Docker image
-      - name: Build Docker image
-        run: docker build -t cypress-tests .
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/chrome:latest
+        
 
-      # Push Docker image to Docker Hub
-      - name: Push Docker image
-        run: docker push cypress-tests
