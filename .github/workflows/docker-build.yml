@@ -31,7 +31,7 @@ jobs:
         run: |
           docker build \
             --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
-            -t ${{ secrets.DOCKER_USERNAME }}/chrome:latest .
+            -t ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1 .
         
       - name: Log in to DockerHub
         uses: docker/login-action@v3
@@ -41,8 +41,8 @@ jobs:
       
       - name: Push Docker image to DockerHub
         run: |
-          docker tag ${{ secrets.DOCKER_USERNAME }}/chrome:latest ${{ secrets.DOCKER_USERNAME }}/chrome:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/chrome:latest
+          docker tag ${{ secrets.DOCKER_USERNAME }}/chrome:latest ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
+          docker push ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
       
       
       
