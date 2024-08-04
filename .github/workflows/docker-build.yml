@@ -17,8 +17,8 @@ jobs:
       - name: Configure npm for private registry
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
       # Log in to Docker Hub
       - name: Log in to Docker Hub
