@@ -18,7 +18,7 @@ WORKDIR /opt/app
 # RUN npm install --save-dev cypress
 
 # Install your web application's dependencies
-COPY package.json .
+# COPY package.json .
 # COPY yarn.lock .
 # COPY .yarnrc.yml .
 
