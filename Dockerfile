@@ -23,7 +23,7 @@ WORKDIR /opt/app
 # COPY .yarnrc.yml .
 
 # #Install dependencies using Yarn
-RUN echo "//registry.npmjs.org/:_authToken=\${{ secrets.EP_NPM_TOKEN }}" > .npmrc
+# RUN echo "//registry.npmjs.org/:_authToken=\${{ secrets.EP_NPM_TOKEN }}" > .npmrc
 # RUN yarn install
 
 #Then run the command below on terminal
