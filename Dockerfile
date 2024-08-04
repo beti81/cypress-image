@@ -15,7 +15,7 @@ COPY . /opt/app
 # Set working directory
 WORKDIR /opt/app
 
-RUN npm install --save-dev cypress
+# RUN npm install --save-dev cypress
 
 # Install your web application's dependencies
 # COPY package.json .
