@@ -36,7 +36,7 @@ jobs:
       
       - name: Push Docker image to DockerHub
         run: |
-          docker tag 126.0.6478.61-1 ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
+          docker tag ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1 ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
           docker push ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
       
       
