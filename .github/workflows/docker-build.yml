@@ -57,4 +57,4 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/chrome:latest
-          platforms: linux/x64
+          platforms: linux/amd64
