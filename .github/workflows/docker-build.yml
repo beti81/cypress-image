@@ -1,10 +1,21 @@
 name: Build and Push Docker Image
 
-on:
-  push:
-    branches:
-      - main  # Trigger on pushes to the main branch
+# on:
+#   push:
+#     branches:
+#       - main  # Trigger on pushes to the main branch
 
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Select the browser'
+        required: true
+        default: 'chrome'
+        type: choice
+        options:
+          - chrome
+          - firefox
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,6 +24,9 @@ jobs:
       # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Display selected browser
+        run: echo "Selected browser: ${{ github.event.inputs.browser }}"
      
       - name: Configure npm for private registry
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.EP_NPM_TOKEN }}" > .npmrc
@@ -38,8 +52,6 @@ jobs:
         run: |
           docker tag ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1 ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
           docker push ${{ secrets.DOCKER_USERNAME }}/chrome:126.0.6478.61-1
-      
-      
       
       # - name: Install dependencies
       #   run: npm install
