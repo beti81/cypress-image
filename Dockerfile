@@ -10,10 +10,10 @@ ARG CYPRESS_VERSION='13.5.0'
 FROM cypress/factory
 
 # Copy your test suite into the Docker image
-COPY . /opt/app
+# COPY . /opt/app
 
 # Set working directory
-WORKDIR /opt/app
+# WORKDIR /opt/app
 
 # RUN npm install --save-dev cypress
 
